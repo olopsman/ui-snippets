@@ -1,18 +1,35 @@
 <html>
+  <title>Using CSS Variables</title>
+<head>
 <style>
+/*global css variable*/  
 :root {
   --main-color:#CCC;
+  --main-font-size: 18pt;
 }
 body {
   background-color: var(--main-color);
+  font-size: var(--main-font-size);
 }
 
+/*local css variable*/
+.alert p{
+  --alert-color:#ff6f69;
+}
+.alert p{
+  color: var(--alert-color);
+  background-color: 1px solid var(--alert-color);
+}
 
+@media all and (max-width:600px) {
+  :root {
+    --main-color:rgb(181, 219, 130);
+    --main-font-size:12pt;
+  }
+}
 </style>
 <script>
-
-
-
+//access the css variable from the dom  
 function changeColor() {
   var root = document.querySelector(':root');
   var rootStyles = getComputedStyle(root);
@@ -22,8 +39,19 @@ function changeColor() {
   root.style.setProperty('--main-color', '#FFF');
 }
 </script>
+</head>
 <body>
-<a href="javascript:changeColor();">Change color to white </a>
+<h1>CSS Variables Demo</h1>  
+<div><a href="javascript:changeColor();">Change background color to white </a></div>
+<div><h1>Hello World</h1>
+  <p>Resize window to change background color and font size</p>
+</div>
+<div class="alert">
+  <p>Special local variable child</p>
+  <span>Just a child</span>
+</div>
+
+
 </body>
 </html>
 
