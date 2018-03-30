@@ -1,2 +1,2 @@
 # ui-snippets
-Useful CSS, HTML5 and Javascript snippets
+A collection of useful CSS, HTML5 and Javascript tricks and snippets
