@@ -1,0 +1,32 @@
+<html>
+  <title>Using CSS Flexbox</title>
+<head>
+<style>
+	/* 1 turn into flexbox*/
+	.container {
+		border:5px solid #ffcc5c;
+		display:flex;
+		/* 2 justify-content: space-between;*/
+	}
+	/* 3 control single item 
+	.logout {
+		margin-left:auto;
+	}*/
+	/* 4 make width responsive */
+	.container > div {
+		flex: 1;
+	}
+</style>
+</head>
+<body>
+
+<nav class="container">
+  <div>Home</div>
+  <div>Search</div>
+  <div class="logout">Logout</div>
+</nav>
+
+
+</body>
+</html>
+
